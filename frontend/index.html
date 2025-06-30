@@ -9,6 +9,18 @@
     <meta name="description" content="An MVP1 for smart knowledge manamgement">
 </head>
 <body>
+    <header>
+        <h1>Smart Reading Inbox</h1>
+    <form id="urlForm">
+        <input type="text" id="urlInput" placeholder="Paste a URL...">
+        <button type="submit">Summarize</button>
+    </form>
+    <div id="summaryBox">
+        <h2>Summary</h2>
+        <ul id="results-list"></ul>
+        <textarea id= "summary-result" name="message" rows="10" cols="30">
+        </textarea>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
