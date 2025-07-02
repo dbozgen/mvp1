@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.env
+*.env
+
+# FastAPI/Logs
+*.log
+
+# JavaScript/Web
+node_modules/
+dist/
+.DS_Store
+
+# OS/System
+Thumbs.db
