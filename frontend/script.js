@@ -23,4 +23,25 @@ form.addEventListener('submit', function(event) {
         alert('Please enter a valid URL.');
         return;
     }
-})
+    const data = {url : url};
+    fetch("http:localhost:8000/summarize",{
+        mehod: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Server returned an error');    
+        }
+        return response.json();
+    })
+    . then (data => {
+        console.log ("Summary received:", data.summary);
+    })
+    .catch(error => {
+        console.error('Fetch error:',error);
+        alert('An error occurred while fetching the summary. Please try again later.');
+    });
+});
