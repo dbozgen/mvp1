@@ -24,7 +24,7 @@ def summarize_text(text:str) ->str:
             {"role": "system", "content": "You are a helpful assistant that summarizes articles."},
             {"role": "user", "content": f"Please summarize the following article content:\n{text}"}
         ],
-        max_tokens=150,  # Adjust as needed
+        max_tokens=300,  # Adjust as needed
         temperature=0.7  # Adjust as needed
     )
     return response.choices[0].message.content.strip() 
