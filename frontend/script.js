@@ -1,5 +1,7 @@
 const form = document.getElementById('urlForm');
 const input = document.getElementById('urlInput');
+const summaryOutput = document.getElementById('summaryBox');
+
 
 function isValidUrl(url) {
     try {
@@ -24,8 +26,8 @@ form.addEventListener('submit', function(event) {
         return;
     }
     const data = {url : url};
-    fetch("http:localhost:8000/summarize",{
-        mehod: "POST",
+    fetch("http://localhost:8000/summarize",{
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
@@ -39,6 +41,7 @@ form.addEventListener('submit', function(event) {
     })
     . then (data => {
         console.log ("Summary received:", data.summary);
+        summaryOutput.textContent = data.summary;
     })
     .catch(error => {
         console.error('Fetch error:',error);
